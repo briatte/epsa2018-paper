@@ -9,7 +9,7 @@ The code turns [legislative cosponsorship data][parlnet] into a panel dataset of
 
 # Read
 
-The working paper is [included in the repository](paper.pdf).
+The [working paper](paper.pdf) and [conference slides](slides.pdf) are included in the repository.
 
 # Data
 
