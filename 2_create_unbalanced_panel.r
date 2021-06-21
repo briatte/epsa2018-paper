@@ -1,8 +1,7 @@
 # --- pkgs ---------------------------------------------------------------------
 
-library(dplyr)  # loads: tibble
+library(dplyr) # loads: tibble
 library(readr)
-library(strict) # https://github.com/hadley/strict
 
 # --- data ---------------------------------------------------------------------
 

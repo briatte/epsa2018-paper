@@ -1,10 +1,9 @@
 # --- pkgs ---------------------------------------------------------------------
 
-library(dplyr)   # loads: tibble
+library(dplyr) # loads: tibble
 library(network)
 library(purrr)
 library(readr)
-library(strict) # https://github.com/hadley/strict
 
 # --- data ---------------------------------------------------------------------
 
@@ -18,7 +17,7 @@ load("data/parlnet.rda")
 g <- readr::read_csv("data/parlnet.csv") %>%
   select(size, duration, network, government, coalition)
 
-d <- tibble::data_frame() # initialize master data frame
+d <- tibble::tibble() # initialize master data frame
 
 # --- extract edgelists and (co)sponsor attributes -----------------------------
 
@@ -35,7 +34,7 @@ for (i in ls()[ grepl("^net", ls()) & !grepl("net_at", ls()) ]) {
   # extract directed edgelist from (i = cosponsor) to (j = first author)
   # weight w = raw number of cosponsorships from i to j
   e <- network::as.edgelist(n, attrname = "raw", directed = TRUE) %>% 
-    tibble::as_data_frame() %>% 
+    tibble::as_tibble() %>% 
     setNames(c("i", "j", "w"))
   
   # party
@@ -64,7 +63,7 @@ for (i in ls()[ grepl("^net", ls()) & !grepl("net_at", ls()) ]) {
 # sanity check: all networks covered
 stopifnot(d$network %in% g$network)
 
-d <- left_join(d, g, by = "network")
+d <- dplyr::left_join(d, g, by = "network")
 
 # whether (co)sponsors are in government (1) or opposition (0)
 in_government <- function(x, y) {
