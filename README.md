@@ -9,7 +9,7 @@ The code turns [legislative cosponsorship data][parlnet] into a panel dataset of
 
 # Read
 
-The [working paper](paper.pdf) and [conference slides](slides.pdf) are included in the repository.
+The working paper and conference slides are available from the authors on email request.
 
 # Data
 
@@ -17,7 +17,7 @@ Details on the data can be found in [DATA.md](DATA.md).
 
 # Code
 
-Written in [R][r] 3.3.3 in [`strict`][strict] mode.
+Initially written in [R][r] 3.3.3 in [`strict`][strict] mode. Currently being updated for R 4.1.0.
 
 [r]: https://cran.r-project.org/
 [strict]: https://github.com/hadley/strict
@@ -38,4 +38,4 @@ sink()
 
 Package dependencies are listed at the top of each script.
 
-> Last updated: June 2018.
+> Last updated: June 2021.
